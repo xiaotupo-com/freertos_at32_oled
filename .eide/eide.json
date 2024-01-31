@@ -1,0 +1,259 @@
+{
+  "name": "freertos_oled",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [
+    ".eide/deps"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "user",
+        "files": [
+          {
+            "path": "src/at32f413_clock.c"
+          },
+          {
+            "path": "src/at32f413_int.c"
+          },
+          {
+            "path": "src/main.c"
+          },
+          {
+            "path": "src/xtp_defines.c"
+          },
+          {
+            "path": "src/xtp_gpio.c"
+          },
+          {
+            "path": "src/xtp_create_task.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "firmware",
+        "files": [
+          {
+            "path": "libraries/cmsis/cm4/device_support/system_at32f413.c"
+          },
+          {
+            "path": "libraries/drivers/src/at32f413_misc.c"
+          },
+          {
+            "path": "libraries/drivers/src/at32f413_gpio.c"
+          },
+          {
+            "path": "libraries/drivers/src/at32f413_crm.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "cmsis",
+        "files": [
+          {
+            "path": "libraries/cmsis/cm4/device_support/startup/mdk/startup_at32f413.s"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "readme",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "freertos",
+        "files": [
+          {
+            "path": "FreeRTOS-Kernel/tasks.c"
+          },
+          {
+            "path": "FreeRTOS-Kernel/portable/MemMang/heap_4.c"
+          },
+          {
+            "path": "FreeRTOS-Kernel/list.c"
+          },
+          {
+            "path": "FreeRTOS-Kernel/portable/GCC/ARM_CM4F/port.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "middleware",
+        "files": [
+          {
+            "path": "middleware/led.c"
+          },
+          {
+            "path": "middleware/xtp_cross_platform.c"
+          }
+        ],
+        "folders": []
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "miscInfo": {
+    "uid": "648aceef230f97cd9eb0e0fa0af995b0"
+  },
+  "targets": {
+    "template": {
+      "excludeList": [],
+      "toolchain": "AC6",
+      "compileConfig": {
+        "cpuType": "Cortex-M4",
+        "floatingPointHardware": "single",
+        "scatterFilePath": "",
+        "useCustomScatterFile": false,
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "RAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x8000"
+              },
+              "isChecked": true,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "ROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x8000000",
+                "size": "0x40000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            },
+            {
+              "tag": "IROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "null",
+          "cpuName": "null"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          "inc",
+          "libraries/drivers/inc",
+          "libraries/cmsis/cm4/device_support",
+          "libraries/cmsis/cm4/core_support",
+          "FreeRTOS-Kernel/include",
+          "middleware",
+          "FreeRTOS-Kernel/portable/GCC/ARM_CM4F",
+          "RTE/_template"
+        ],
+        "libList": [],
+        "sourceDirList": [],
+        "defineList": [
+          "AT32F413CCU7",
+          "USE_STDPERIPH_DRIVER",
+          "AT_START_F413_V1"
+        ]
+      }
+    }
+  },
+  "version": "3.3"
+}
